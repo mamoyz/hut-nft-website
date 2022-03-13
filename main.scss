@@ -5,7 +5,7 @@ html {
     }
 }
 body {
-    background: url("/png/Website\ tile\ 1-01.png");
+    background: url("png/Website\ tile\ 1-01.png");
     background-size: 25vw auto;
     font-family: "filmotype-austin";
     margin: 0;
@@ -139,7 +139,7 @@ header {
     .wrapper {
         display: flex;
         flex-direction: column;
-        background: url("/png/website\ tall\ pal\ 1.png") no-repeat;
+        background: url("png/website\ tall\ pal\ 1.png") no-repeat;
         background-size: 380rem auto;
         background-position: center top;
         padding-bottom: 350rem;
@@ -273,7 +273,7 @@ header {
                         position: absolute;
                         top: 15rem;
                         left: -70rem;
-                        background: url("/png/plus.png") no-repeat;
+                        background: url("png/plus.png") no-repeat;
                         background-size: cover;
                         transition: all 0.3s;
                     }
