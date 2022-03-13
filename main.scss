@@ -1,7 +1,15 @@
+@mixin mobile() {
+    @media (max-width: 959px) {
+        @content;
+    }
+}
 html {
     font-size: 6.25%;
     @media (min-width: 960px) and (max-width: 1600px) {
         font-size: 0.06vw;
+    }
+    @include mobile() {
+        font-size: 0.12vw;
     }
 }
 body {
@@ -10,6 +18,9 @@ body {
     font-family: "filmotype-austin";
     margin: 0;
     padding: 0;
+    @include mobile() {
+        background-size: 65vw auto;
+    }
 }
 
 * {
@@ -21,10 +32,19 @@ body {
     max-width: 1280rem;
     margin-left: auto;
     margin-right: auto;
+    @include mobile() {
+        padding-left: 30rem;
+        padding-right: 30rem;
+    }
 }
-
+#main {
+    overflow-x: hidden;
+}
 header {
     margin-top: 100rem;
+    @include mobile() {
+        margin-top: 15rem;
+    }
     .wrapper {
         display: flex;
         align-items: center;
@@ -34,11 +54,22 @@ header {
         svg {
             width: 240rem;
             height: 240rem;
+            @include mobile() {
+                width: 120rem;
+                height: 120rem;
+            }
         }
     }
     .intro {
         padding-left: 40rem;
         padding-right: 40rem;
+        @include mobile() {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 200rem;
+            text-align: center;
+        }
         h1 {
             margin: 0;
             font-size: 50rem;
@@ -47,6 +78,9 @@ header {
             background: #00a855;
             padding: 14rem;
             border-radius: 35rem;
+            @include mobile() {
+                font-size: 55rem;
+            }
         }
     }
     .icons {
@@ -85,11 +119,19 @@ header {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        @include mobile() {
+            flex-direction: column-reverse;
+            padding-top: 150rem;
+            align-items: stretch;
+        }
         .content {
             flex: 1 1 auto;
             text-align: center;
             color: #00a855;
             padding-right: 80rem;
+            @include mobile() {
+                padding-right: 0;
+            }
             p {
                 font-size: 50rem;
                 margin: 20rem 0 0 0;
@@ -103,8 +145,16 @@ header {
         }
         .hero-img {
             flex: 0 0 470rem;
+            @include mobile() {
+                text-align: center;
+                margin-bottom: 40rem;
+            }
             img {
                 width: 100%;
+                @include mobile() {
+                    width: 35%;
+                    margin: auto;
+                }
             }
         }
     }
@@ -119,10 +169,17 @@ header {
         .swiper-slide {
             width: 320rem !important;
             margin-right: 65rem !important;
+            @include mobile() {
+                margin-right: 30rem !important;
+            }
             img {
                 display: block;
                 width: 100%;
             }
+        }
+        @include mobile() {
+            transform: none;
+            padding-left: 30rem;
         }
     }
 }
@@ -143,11 +200,18 @@ header {
         background-size: 380rem auto;
         background-position: center top;
         padding-bottom: 350rem;
+        @include mobile() {
+            background: none;
+            padding-bottom: 50rem;
+        }
         p {
             color: #00a855;
             font-size: 44rem;
             max-width: 450rem;
             margin: 0;
+            @include mobile() {
+                max-width: 70%;
+            }
         }
         .item {
             margin-bottom: -50rem;
@@ -160,6 +224,11 @@ header {
             }
             &:nth-child(even) {
                 justify-content: flex-end;
+            }
+            @include mobile() {
+                margin-top: 0 !important;
+                justify-content: center !important;
+                margin-bottom: 50rem;
             }
         }
     }
@@ -209,6 +278,9 @@ header {
         display: flex;
         justify-content: center;
         margin-top: 50rem;
+        @include mobile() {
+            flex-direction: column;
+        }
         .item {
             margin: 0 40rem;
             color: #fff1bc;
@@ -217,11 +289,18 @@ header {
             border-radius: 70rem;
             padding-bottom: 25rem;
             border: 10rem solid #007d3f;
+            @include mobile() {
+                margin-bottom: 80rem;
+                border-radius: 125rem;
+            }
             img {
                 width: 100%;
                 display: block;
                 transform: scale(1.05);
                 margin-bottom: 10rem;
+                @include mobile() {
+                    transform: scale(1.03);
+                }
             }
             h3 {
                 font-size: 85rem;
@@ -315,11 +394,17 @@ footer {
     color: #fff1bc;
     text-align: center;
     padding: 40rem 0;
+    @include mobile() {
+        margin-top: 150rem;
+    }
     .wrapper {
         margin: 0 auto;
         text-align: center;
         font-size: 30rem;
         max-width: 1000rem;
         font-family: arial;
+        @include mobile() {
+            font-size: 40rem;
+        }
     }
 }
