@@ -2,7 +2,9 @@ const swiper = new Swiper('.swiper', {
     // Optional parameters
     loop: true,
     slidesPerView: 'auto',
-    centeredSlides: true,
+    centeredSlides: false,
+    freeMode: true,
+
     autoplay: true
 });
 
